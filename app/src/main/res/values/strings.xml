@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Services</string>
+    <string name="service_description">Downloads certain data in background no need to remove it</string>
+</resources>
