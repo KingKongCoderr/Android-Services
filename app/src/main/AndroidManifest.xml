@@ -18,6 +18,12 @@
         </activity>
         <service android:name=".DownloadService"
             android:description="@string/service_description"/>
+
+        <service android:name=".AsynchronousService"
+            android:description="@string/service1_description"/>
+
+        <service android:name=".BoundService"
+            android:description="@string/boundservice_description"/>
     </application>
 
 </manifest>

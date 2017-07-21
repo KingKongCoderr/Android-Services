@@ -63,7 +63,7 @@ public class DownloadService extends IntentService {
             // that takes time
             try {
                 // Sleep for 5 seconds
-                Thread.sleep(1 * 500);
+                Thread.sleep(1 * 400);
             } catch (InterruptedException e) {
                 Log.d("Intentservice", "sleep failure");
             }
@@ -73,7 +73,7 @@ public class DownloadService extends IntentService {
                 // Removes the progress bar
                 .setProgress(0,0,false);
         notificationManager.notify(id,notification_builder.build());
-        broadcastResult(result);
+       // broadcastResult(result);
 
     }
 }
