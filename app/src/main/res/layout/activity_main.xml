@@ -10,12 +10,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/raw_et"
         android:hint="Enter anything"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/download_bt"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintHorizontal_bias="0.502" />
 
     <Button
         android:layout_width="wrap_content"
@@ -23,15 +24,13 @@
         android:id="@+id/download_bt"
         android:text="Broadcast Result"
         android:onClick="buttonClick"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintHorizontal_bias="0.504"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/raw_et" />
 
     <Button
         android:layout_width="195dp"
@@ -41,10 +40,10 @@
         android:gravity="left"
         android:text="Notify Result IntentService"
         android:textSize="10sp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/download_bt"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/download_bt" />
 
     <Button
         android:id="@+id/cancelservice_bt"
@@ -84,14 +83,14 @@
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
-        android:layout_marginTop="76dp"
-        app:layout_constraintTop_toBottomOf="@+id/notify2_bt" />
+        android:layout_marginTop="33dp"
+        app:layout_constraintTop_toBottomOf="@+id/ipc_bt" />
 
     <Button
         android:id="@+id/boundservice_bt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Bound Service"
+        android:text="Bound Service Local"
         android:onClick="buttonClick"
         android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/notify2_bt"
@@ -99,5 +98,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/ipc_bt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        android:text="IPC"
+        android:onClick="buttonClick"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/boundservice_bt" />
 
 </android.support.constraint.ConstraintLayout>

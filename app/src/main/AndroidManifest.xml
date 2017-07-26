@@ -24,6 +24,10 @@
 
         <service android:name=".BoundService"
             android:description="@string/boundservice_description"/>
+        <service android:name=".MessengerIpc"
+            android:process=":messengerprc"
+            android:description="@string/ipc_description"/>
+
     </application>
 
 </manifest>

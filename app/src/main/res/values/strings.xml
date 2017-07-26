@@ -3,4 +3,5 @@
     <string name="service_description">Downloads certain data in background no need to remove it</string>
     <string name="service1_description">Service 1 extends Service class</string>
     <string name="boundservice_description">Bound service connecting client and service through IBinder Interface</string>
+    <string name="ipc_description">Messenger used to perform IPC </string>
 </resources>
