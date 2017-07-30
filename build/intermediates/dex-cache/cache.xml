@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/Users/ntankasala/Documents/android_projects/AsynchronousAndroid/Services/textformatter/build/intermediates/bundles/default/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="26.0.0"
+        sha1="7fd9dae39c2e060b167de4cf54f390f2fcf844e9">
+        <dex dex="/Users/ntankasala/Documents/android_projects/AsynchronousAndroid/Services/app/build/intermediates/pre-dexed/debug/classes_605cfef91d656673be40c91c92c51339ebc32feb.jar" />
+    </item>
+
+</items>
