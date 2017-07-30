@@ -1,5 +1,6 @@
 package com.example.ntankasala.services;
 
+import android.app.PendingIntent;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -28,12 +29,12 @@ import com.example.ntankasala.services.BoundService;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button mbroadcastIntent, mnotifyResult, mcancelService, mboundService, mipc_bt;
+    Button mbroadcastIntent, mnotifyResult, mcancelService, mboundService, mipc_bt, mpendingIntent_bt;
     TextView mresult_tv;
     EditText mraw_et;
     DownloadReceiver mdownloadReceiver;
     SystemBroadcastReceiver msystemBroadcastReceiver;
-    Intent service_intent, service_intent1, boundIntent, ipc_intent;
+    Intent service_intent, mpendingIntent, service_intent1, boundIntent, ipc_intent;
 
     SharedPreferences msharedpreferences;
     SharedPreferences.Editor mpreferenceEditor;
@@ -118,10 +119,12 @@ public class MainActivity extends AppCompatActivity {
         boundIntent = new Intent(this, BoundService.class);
         service_intent = new Intent(this, DownloadService.class);
         service_intent1 = new Intent(this, AsynchronousService.class);
+        mpendingIntent = new Intent(this, DownloadService.class);
         ipc_intent = new Intent(this, MessengerIpc.class);
         mnotifyResult = (Button) findViewById(R.id.notify_bt);
         mresult_tv = (TextView) findViewById(R.id.result_tv);
         mipc_bt = (Button)findViewById(R.id.ipc_bt);
+        mpendingIntent_bt = (Button)findViewById(R.id.pndngIntent_bt);
         mbroadcastIntent = (Button) findViewById(R.id.download_bt);
         mcancelService = (Button) findViewById(R.id.cancelservice_bt);
         mboundService = (Button) findViewById(R.id.boundservice_bt);
@@ -178,6 +181,9 @@ public class MainActivity extends AppCompatActivity {
                 service_intent.putExtra("operationid", 1);
                 startserviceTask(raw_text);
                 break;
+            case R.id.pndngIntent_bt:
+                mpendingIntent.putExtra("operationid", 3);
+                startPendingIntent(raw_text);break;
             case R.id.notify_bt:
                 service_intent.putExtra("operationid", 2);
                 startserviceTask(raw_text);
@@ -220,6 +226,21 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(requestCode == 3 && resultCode == 2){
+            mresult_tv.setText(data.getStringExtra("response"));
+        }
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    private void startPendingIntent(String raw_text){
+        PendingIntent pendingIntent = createPendingResult(3, new Intent(),0);
+        mpendingIntent.putExtra("raw",raw_text);
+        mpendingIntent.putExtra("pendingintent",pendingIntent);
+        startService(mpendingIntent);
+
+    }
     private void startserviceTask(String raw_text) {
         service_intent.putExtra("raw", raw_text);
         startService(service_intent);

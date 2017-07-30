@@ -6,6 +6,8 @@ import android.os.Binder;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 
+import com.example.textformatter.Formatter;
+
 /**
  * Created by ntankasala on 7/21/17.
  */
@@ -27,8 +29,8 @@ public class BoundService extends Service {
 
     // TODO: 7/24/17 do this in a seperate thread using executor framework
     public String convertUpper(String msg){
-        String upper_string = msg.toUpperCase();
-        return upper_string;
+        Formatter upperCaseFormatter = new Formatter(msg);
+        return upperCaseFormatter.getFormated();
     }
 
 
