@@ -7,7 +7,7 @@ Uses
 
 # to-do:
 
-* Ipc using AIDL through bundles and Content providers.
+* Ipc using AIDL through bundles using parcelable object and Content providers.
 
 
 
